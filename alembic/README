@@ -1,0 +1,53 @@
+Generic single-database configuration.# Service Booking & Appointment Management System
+
+A backend REST API for managing service bookings and appointments between customers and service providers.
+
+The system supports authentication, role-based authorization, service management, provider availability, bookings, payments, reviews, notifications, and dashboards.
+
+---
+
+## 🚀 Features
+
+### Authentication & Authorization
+- User registration and login
+- JWT-based authentication
+- Password hashing using bcrypt
+- Role-based access control
+- Three user roles:
+  - Customer
+  - Provider
+  - Admin
+
+### Services
+- Providers can create services
+- View available services
+- Update services
+- Delete services
+- Service price and duration validation
+
+### Provider Availability
+- Providers can define their working days
+- Configure start and end times
+- Availability validation
+- Prevent invalid time ranges
+
+### Bookings
+- Customers can create bookings
+- Automatic provider assignment through the selected service
+- Provider availability validation
+- Prevent past appointments
+- Prevent duplicate time slots
+- Booking status management
+
+### Booking Status Workflow
+
+```text
+Pending
+   │
+   ├──> Confirmed
+   │       │
+   │       ├──> Completed
+   │       │
+   │       └──> Cancelled
+   │
+   └──> Cancelled
